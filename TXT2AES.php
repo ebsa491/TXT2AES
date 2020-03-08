@@ -7,24 +7,15 @@
 
 class TXT2AES {
 
-    private $txt;
-    private $aes;
-
-    function setTXT() {
-
-        
+    function encryptWithRandomKey($txt) {
 
     }
 
-    function createAndSetAES() {
-
+    function encryptWithKey($txt, $key) {
         
-
     }
 
-    function getAES() {
-
-        
+    function decryptWithKey($encrypted, $key) {
 
     }
 

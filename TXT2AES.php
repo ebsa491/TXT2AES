@@ -71,11 +71,39 @@ class TXT2AES {
         
         // If was success returns TRUE
 
+        if($this->decrypted != NULL) {
+
+            $this->key = $key;
+
+            $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
+
+            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
+
+            return TRUE;
+
+        }
+
+        return FALSE;
+
     }
 
     function encryptWithKeyAndIV($key, $iv) {
 
         // If was success returns TRUE
+
+        if($this->decrypted != NULL) {
+
+            $this->key = $key;
+
+            $this->iv = $iv;
+
+            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
+
+            return TRUE;
+
+        }
+
+        return FALSE;
 
     }
 

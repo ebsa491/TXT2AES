@@ -59,7 +59,6 @@ if($txt2aes->encrypt("Hello for last time", $key, $iv)) {
     echo "<br/>";
 }
 
-
 // Decryption
 
 $encrypted = "fDc9U5CNv9PugUy46zLVJrsOgIlBMWq62a99UCZjBmA=";

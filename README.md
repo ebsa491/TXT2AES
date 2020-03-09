@@ -11,7 +11,7 @@ The Advanced Encryption Standard (AES), also known by its original name Rijndael
 
 [WikipediA](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
-This program use ***AES-CBC*** algorithm for encryption so a key and an IV is required.
+This program use ***AES-CBC*** algorithm for encryption so a key and an IV are required.
 
 ## Usage
 

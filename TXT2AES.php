@@ -47,59 +47,53 @@ class TXT2AES {
         return $this->iv;
     }
 
-    function encryptWithRandomKey() {
+    function encrypt($key = NULL, $iv = NULL) {
+
+        // If you don't give key and iv parameters function makes a random key and a random iv
 
         // If was success returns TRUE
 
         if($this->decrypted != NULL) {
 
-            $this->key = openssl_random_pseudo_bytes(32);
+            if($key != NULL) {
+                if($iv != NULL) {
 
-            $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
+                    // encryptWithKeyAndIV : Encrypt with given key and given iv
 
-            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
+                    $this->key = $key;
 
-            return TRUE;
+                    $this->iv = $iv;
 
-        }
+                    $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
 
-        return FALSE;
+                    return TRUE;
 
-    }
+                } else {
 
-    function encryptWithKeyRandomIV($key) {
-        
-        // If was success returns TRUE
+                    // encryptWithKeyRandomIV : Encrypt with given key and random iv
 
-        if($this->decrypted != NULL) {
+                    $this->key = $key;
+            
+                    $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
+            
+                    $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
+            
+                    return TRUE;
 
-            $this->key = $key;
+                }
+            } else {
 
-            $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
+                // encryptWithRandomKeyAndIV : Encrypt with random key and random iv
 
-            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
+                $this->key = openssl_random_pseudo_bytes(32);
 
-            return TRUE;
+                $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
 
-        }
+                $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
 
-        return FALSE;
+                return TRUE;
 
-    }
-
-    function encryptWithKeyAndIV($key, $iv) {
-
-        // If was success returns TRUE
-
-        if($this->decrypted != NULL) {
-
-            $this->key = $key;
-
-            $this->iv = $iv;
-
-            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
-
-            return TRUE;
+            }
 
         }
 

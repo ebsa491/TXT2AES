@@ -5,6 +5,8 @@
 // Created at Iran (IR) .
 // PHP 7 .
 
+define('AES_256_CBC', 'aes-256-cbc');
+
 class TXT2AES {
 
     private $encrypted = NULL; // Encrypted text
@@ -12,7 +14,7 @@ class TXT2AES {
     private $iv = NULL; // Initialization vector
     private $key = NULL; // Encryption key
 
-    function __construct($encrypted, $iv, $key) {
+    function constructForDecrypt($encrypted, $key, $iv) {
         
         // If you want to decrypt use this when you want to create an object
 
@@ -22,11 +24,27 @@ class TXT2AES {
 
     }
 
-    function __construct($txt) {
+    function constructForEncrypt($txt) {
 
         // If you want to encrypt use this when you want to create an object
 
         $this->decrypted = $txt;
+    }
+
+    function getEncrypted() {
+        return $this->encrypted;
+    }
+
+    function getDecrypted() {
+        return $this->decrypted;
+    }
+
+    function getKey() {
+        return $this->key;
+    }
+
+    function getIV() {
+        return $this->iv;
     }
 
     function encryptWithRandomKey() {
@@ -35,13 +53,11 @@ class TXT2AES {
 
         if($this->decrypted != NULL) {
 
-            define('AES_256_CBC', 'aes-256-cbc');
-
             $this->key = openssl_random_pseudo_bytes(32);
 
             $this->iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
 
-            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $key, 0, $iv);
+            $this->encrypted = openssl_encrypt($this->decrypted, AES_256_CBC, $this->key, 0, $this->iv);
 
             return TRUE;
 
@@ -63,9 +79,7 @@ class TXT2AES {
 
         if($this->encrypted != NULL) {
 
-            define('AES_256_CBC', 'aes-256-cbc');
-
-            $this->decrypted = openssl_decrypt($this->encrypted, AES_256_CBC, $this->key, 0, base64_decode($this->iv));
+            $this->decrypted = openssl_decrypt($this->encrypted, AES_256_CBC, $this->key, 0, $this->iv);
 
             return TRUE;
 

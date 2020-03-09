@@ -14,23 +14,6 @@ class TXT2AES {
     private $iv = NULL; // Initialization vector
     private $key = NULL; // Encryption key
 
-    function constructForDecrypt($encrypted, $key, $iv) {
-        
-        // If you want to decrypt use this when you want to create an object
-
-        $this->encrypted = $encrypted;
-        $this->iv = $iv;
-        $this->key = $key;
-
-    }
-
-    function constructForEncrypt($txt) {
-
-        // If you want to encrypt use this when you want to create an object
-
-        $this->decrypted = $txt;
-    }
-
     function getEncrypted() {
         return $this->encrypted;
     }
@@ -47,11 +30,13 @@ class TXT2AES {
         return $this->iv;
     }
 
-    function encrypt($key = NULL, $iv = NULL) {
+    function encrypt($data, $key = NULL, $iv = NULL) {
 
+        // If you want to encrypt use this
         // If you don't give key and iv parameters function makes a random key and a random iv
-
         // If was success returns TRUE
+
+        $this->decrypted = $data;
 
         if($this->decrypted != NULL) {
 
@@ -101,11 +86,16 @@ class TXT2AES {
 
     }
 
-    function decrypt() {
+    function decrypt($encrypted, $key, $iv) {
 
+        // If you want to decrypt use this
         // If was success returns TRUE
 
-        if($this->encrypted != NULL) {
+        $this->encrypted = $encrypted;
+        $this->iv = $iv;
+        $this->key = $key;
+
+        if($this->encrypted != NULL && $this->key != NULL && $this->iv != NULL) {
 
             $this->decrypted = openssl_decrypt($this->encrypted, AES_256_CBC, $this->key, 0, $this->iv);
 

@@ -67,8 +67,14 @@ class TXT2AES {
 
     }
 
-    function encryptWithKey($key) {
+    function encryptWithKeyRandomIV($key) {
         
+        // If was success returns TRUE
+
+    }
+
+    function encryptWithKeyAndIV($key, $iv) {
+
         // If was success returns TRUE
 
     }

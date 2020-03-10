@@ -123,7 +123,7 @@ if($txt2aes->decrypt($encrypted, $key, $iv)) {
 
 ## Index
 
-- [TXT2AES class](https://github.com/ebsa491/TXT2AES/blob/master/README.md#txt2aes-class)
+- [TXT2AES class](#txt2aes-class)
   - [$encrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#encrypted)
   - [$decrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#decrypted)
   - [$iv](https://github.com/ebsa491/TXT2AES/blob/master/README.md#iv)

@@ -198,7 +198,7 @@ The decryption function with three parameters:
 
 &#127279; GNU Lesser General Public License (LGPL) v3.0 .
 
-An open source project created by Saman Ebrahimnezhad .
+The project has been developed by Saman Ebrahimnezhad .
 
 Created in Iran (IR) .
 

@@ -124,16 +124,16 @@ if($txt2aes->decrypt($encrypted, $key, $iv)) {
 ## Index
 
 - [TXT2AES class](#txt2aes-class)
-  - [$encrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#encrypted)
-  - [$decrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#decrypted)
-  - [$iv](https://github.com/ebsa491/TXT2AES/blob/master/README.md#iv)
-  - [$key](https://github.com/ebsa491/TXT2AES/blob/master/README.md#key)
-  - [getEncrypted()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getencrypted)
-  - [getDecrypted()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getdecrypted)
-  - [getKey()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getkey)
-  - [getIV()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getiv)
-  - [encrypt($data, $key = NULL, $iv = NULL)](https://github.com/ebsa491/TXT2AES/blob/master/README.md#encryptdata-key--null-iv--null)
-  - [decrypt($encrypted, $key, $iv)](https://github.com/ebsa491/TXT2AES/blob/master/README.md#decryptencrypted-key-iv)
+  - [$encrypted](#encrypted)
+  - [$decrypted](#decrypted)
+  - [$iv](#iv)
+  - [$key](#key)
+  - [getEncrypted()](#getencrypted)
+  - [getDecrypted()](#getdecrypted)
+  - [getKey()](#getkey)
+  - [getIV()](#getiv)
+  - [encrypt($data, $key = NULL, $iv = NULL)](#encryptdata-key--null-iv--null)
+  - [decrypt($encrypted, $key, $iv)](#decryptencrypted-key-iv)
 
 ### TXT2AES class
 

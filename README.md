@@ -2,6 +2,7 @@
 A PHP program that encrypts any text with AES and can decrypt that too (PHP 7 used) .
 
 [![Build Status](https://img.shields.io/badge/build-passing-success)](https://samebison.ir)
+[![Version: 1.0](https://img.shields.io/badge/version-1.0-green)](https://samebison.ir)
 [![PHP: 7.0](https://img.shields.io/badge/php-7.0-blueviolet)](https://php.net)
 [![License: LGPL](https://img.shields.io/badge/license-LGPL--3.0-informational)](https://www.gnu.org/licenses/lgpl-3.0)
 

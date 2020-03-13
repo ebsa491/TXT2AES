@@ -2,6 +2,7 @@
 A PHP program that encrypts any text with AES and can decrypt that too (PHP 7 used) .
 
 [![Build Status](https://img.shields.io/badge/build-passing-success)](https://samebison.ir)
+[![Version: 1.0](https://img.shields.io/badge/version-1.0-green)](https://samebison.ir)
 [![PHP: 7.0](https://img.shields.io/badge/php-7.0-blueviolet)](https://php.net)
 [![License: LGPL](https://img.shields.io/badge/license-LGPL--3.0-informational)](https://www.gnu.org/licenses/lgpl-3.0)
 
@@ -11,7 +12,7 @@ The Advanced Encryption Standard (AES), also known by its original name Rijndael
 
 [WikipediA](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
-This program use ***AES-CBC*** algorithm for encryption so a key and an IV is required.
+This program use ***AES-CBC*** algorithm for encryption so a key and an IV are required.
 
 ## Usage
 
@@ -123,17 +124,17 @@ if($txt2aes->decrypt($encrypted, $key, $iv)) {
 
 ## Index
 
-- [TXT2AES class](https://github.com/ebsa491/TXT2AES/blob/master/README.md#txt2aes-class)
-  - [$encrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#encrypted)
-  - [$decrypted](https://github.com/ebsa491/TXT2AES/blob/master/README.md#decrypted)
-  - [$iv](https://github.com/ebsa491/TXT2AES/blob/master/README.md#iv)
-  - [$key](https://github.com/ebsa491/TXT2AES/blob/master/README.md#key)
-  - [getEncrypted()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getencrypted)
-  - [getDecrypted()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getdecrypted)
-  - [getKey()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getkey)
-  - [getIV()](https://github.com/ebsa491/TXT2AES/blob/master/README.md#getiv)
-  - [encrypt($data, $key = NULL, $iv = NULL)](https://github.com/ebsa491/TXT2AES/blob/master/README.md#encryptdata-key--null-iv--null)
-  - [decrypt($encrypted, $key, $iv)](https://github.com/ebsa491/TXT2AES/blob/master/README.md#decryptencrypted-key-iv)
+- [TXT2AES class](#txt2aes-class)
+  - [$encrypted](#encrypted)
+  - [$decrypted](#decrypted)
+  - [$iv](#iv)
+  - [$key](#key)
+  - [getEncrypted()](#getencrypted)
+  - [getDecrypted()](#getdecrypted)
+  - [getKey()](#getkey)
+  - [getIV()](#getiv)
+  - [encrypt($data, $key = NULL, $iv = NULL)](#encryptdata-key--null-iv--null)
+  - [decrypt($encrypted, $key, $iv)](#decryptencrypted-key-iv)
 
 ### TXT2AES class
 
@@ -198,7 +199,7 @@ The decryption function with three parameters:
 
 &#127279; GNU Lesser General Public License (LGPL) v3.0 .
 
-An open source project created by Saman Ebrahimnezhad .
+The project has been developed by Saman Ebrahimnezhad .
 
 Created in Iran (IR) .
 
